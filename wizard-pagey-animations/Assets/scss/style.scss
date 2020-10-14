@@ -1,0 +1,57 @@
+$transition: all 0.68s ease-in-out;
+
+.as-overflow-wrap {
+    overflow: hidden;
+}
+
+.as-text-wrap {
+    position: relative;
+    top: 0px;
+    transition: $transition;
+    opacity: 1;
+    &.animate-text {
+        top: 100px;
+        opacity: 0;
+    }
+}
+
+.image-wrap {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        bottom: 0;
+        background: white;
+        transition: $transition;
+    }
+    &.animate-image {      
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+.as-content-wrap {
+    position: relative;
+    top: 0px;
+    opacity: 1;
+    transition: $transition;
+    &.animate-box {
+        top: 100px;
+        opacity: 0;
+    }
+}
+
+//Delays
+@for $delay from 1 through 10 {
+    .delay-#{$delay} {
+        transition-delay: $delay * 0.10s;
+    }
+}
+
+/**
+APPLY CUSTOM CODE HERE
+**/
